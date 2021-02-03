@@ -111,9 +111,9 @@ var lookup = function(r, key, resfilter) {
     let cursor
     if (query.find || query.aggregate) {
       if (query.find) {
-        cursor = collection.find(query.find, { allowDiskUse:true })
+        cursor = collection.find(query.find)
       } else if (query.aggregate) {
-        cursor = collection.aggregate(query.aggregate, { allowDiskUse:true })
+        cursor = collection.aggregate(query.aggregate)
       }
       if (query.sort) {
         cursor = cursor.sort(query.sort)
